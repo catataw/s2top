@@ -7,12 +7,12 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/bcicen/ctop/config"
-	"github.com/bcicen/ctop/connector"
-	"github.com/bcicen/ctop/container"
-	"github.com/bcicen/ctop/cwidgets/compact"
-	"github.com/bcicen/ctop/logging"
-	"github.com/bcicen/ctop/widgets"
+	"github.com/catataw/s2top/config"
+	"github.com/catataw/s2top/connector"
+	"github.com/catataw/s2top/container"
+	"github.com/catataw/s2top/cwidgets/compact"
+	"github.com/catataw/s2top/logging"
+	"github.com/catataw/s2top/widgets"
 	ui "github.com/gizak/termui"
 	tm "github.com/nsf/termbox-go"
 )

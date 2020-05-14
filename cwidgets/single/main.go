@@ -1,8 +1,8 @@
 package single
 
 import (
-	"github.com/bcicen/ctop/logging"
-	"github.com/bcicen/ctop/models"
+	"github.com/catataw/s2top/logging"
+	"github.com/catataw/s2top/models"
 	ui "github.com/gizak/termui"
 )
 

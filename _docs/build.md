@@ -3,8 +3,8 @@
 To build `ctop` from source, ensure you have [dep](https://github.com/golang/dep) installed and run:
 
 ```bash
-go get github.com/bcicen/ctop && \
-cd $GOPATH/src/github.com/bcicen/ctop && \
+go get github.com/catataw/s2top && \
+cd $GOPATH/src/github.com/catataw/s2top && \
 make build
 ```
 

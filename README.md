@@ -15,12 +15,12 @@ as well as an [single container view][single_view] for inspecting a specific con
 
 ## Install
 
-Fetch the [latest release](https://github.com/bcicen/ctop/releases) for your platform:
+Fetch the [latest release](https://github.com/catataw/s2top/releases) for your platform:
 
 #### Linux
 
 ```bash
-sudo wget https://github.com/bcicen/ctop/releases/download/v0.7.3/ctop-0.7.3-linux-amd64 -O /usr/local/bin/ctop
+sudo wget https://github.com/catataw/s2top/releases/download/v0.7.3/ctop-0.7.3-linux-amd64 -O /usr/local/bin/ctop
 sudo chmod +x /usr/local/bin/ctop
 ```
 
@@ -31,7 +31,7 @@ brew install ctop
 ```
 or
 ```bash
-sudo curl -Lo /usr/local/bin/ctop https://github.com/bcicen/ctop/releases/download/v0.7.3/ctop-0.7.3-darwin-amd64
+sudo curl -Lo /usr/local/bin/ctop https://github.com/catataw/s2top/releases/download/v0.7.3/ctop-0.7.3-darwin-amd64
 sudo chmod +x /usr/local/bin/ctop
 ```
 

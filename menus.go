@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/bcicen/ctop/config"
-	"github.com/bcicen/ctop/container"
-	"github.com/bcicen/ctop/widgets"
-	"github.com/bcicen/ctop/widgets/menu"
+	"github.com/catataw/s2top/config"
+	"github.com/catataw/s2top/container"
+	"github.com/catataw/s2top/widgets"
+	"github.com/catataw/s2top/widgets/menu"
 	ui "github.com/gizak/termui"
 )
 

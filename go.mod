@@ -1,4 +1,4 @@
-module github.com/bcicen/ctop
+module github.com/catataw/s2top
 
 require (
 	github.com/BurntSushi/toml v0.3.0
