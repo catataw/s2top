@@ -27,7 +27,7 @@ func NewErrorView() *ErrorView {
 	p.PaddingBottom = yPad
 	p.PaddingLeft = xPad
 	p.PaddingRight = xPad
-	p.BorderLabel = " ctop - error "
+	p.BorderLabel = " s2top - error "
 	p.Bg = ui.ThemeAttr("bg")
 	p.TextFgColor = ui.ThemeAttr("status.warn")
 	p.TextBgColor = ui.ThemeAttr("menu.text.bg")

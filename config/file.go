@@ -95,9 +95,9 @@ func getConfigPath() (path string, err error) {
 		if !ok {
 			xdgHome = fmt.Sprintf("%s/.config", homeDir)
 		}
-		path = fmt.Sprintf("%s/ctop/config", xdgHome)
+		path = fmt.Sprintf("%s/s2top/config", xdgHome)
 	} else {
-		path = fmt.Sprintf("%s/.ctop", homeDir)
+		path = fmt.Sprintf("%s/.s2top", homeDir)
 	}
 
 	return path, nil

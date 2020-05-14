@@ -22,14 +22,14 @@ var (
 	version   = "dev-build"
 	goVersion = runtime.Version()
 
-	log     *logging.CTopLogger
+	log     *logging.S2TOPLogger
 	cursor  *GridCursor
 	cGrid   *compact.CompactGrid
-	header  *widgets.CTopHeader
+	header  *widgets.S2TOPHeader
 	status  *widgets.StatusLine
 	errView *widgets.ErrorView
 
-	versionStr = fmt.Sprintf("ctop version %v, build %v %v", version, build, goVersion)
+	versionStr = fmt.Sprintf("s2top version %v, build %v %v", version, build, goVersion)
 )
 
 func main() {
@@ -111,7 +111,7 @@ func main() {
 	}
 	cursor = &GridCursor{cSuper: cSuper}
 	cGrid = compact.NewCompactGrid()
-	header = widgets.NewCTopHeader()
+	header = widgets.NewS2TOPHeader()
 	status = widgets.NewStatusLine()
 	errView = widgets.NewErrorView()
 
@@ -148,9 +148,9 @@ func panicExit() {
 	}
 }
 
-var helpMsg = `ctop - interactive container viewer
+var helpMsg = `s2top - interactive container viewer
 
-usage: ctop [options]
+usage: s2top [options]
 
 options:
 `

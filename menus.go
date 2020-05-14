@@ -20,14 +20,14 @@ var helpDialog = []menu.Item{
 	{"[a] - toggle display of all containers", ""},
 	{"[f] - filter displayed containers", ""},
 	{"[h] - open this help dialog", ""},
-	{"[H] - toggle ctop header", ""},
+	{"[H] - toggle s2top header", ""},
 	{"[s] - select container sort field", ""},
 	{"[r] - reverse container sort order", ""},
 	{"[o] - open single view", ""},
 	{"[l] - view container logs ([t] to toggle timestamp when open)", ""},
 	{"[e] - exec shell", ""},
 	{"[S] - save current configuration to file", ""},
-	{"[q] - exit ctop", ""},
+	{"[q] - exit s2top", ""},
 }
 
 func HelpMenu() MenuFn {

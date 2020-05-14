@@ -7,15 +7,15 @@ import (
 	ui "github.com/gizak/termui"
 )
 
-type CTopHeader struct {
+type S2TOPHeader struct {
 	Time   *ui.Par
 	Count  *ui.Par
 	Filter *ui.Par
 	bg     *ui.Par
 }
 
-func NewCTopHeader() *CTopHeader {
-	return &CTopHeader{
+func NewS2TOPHeader() *S2TOPHeader {
+	return &S2TOPHeader{
 		Time:   headerPar(2, ""),
 		Count:  headerPar(24, "-"),
 		Filter: headerPar(40, ""),
@@ -23,7 +23,7 @@ func NewCTopHeader() *CTopHeader {
 	}
 }
 
-func (c *CTopHeader) Buffer() ui.Buffer {
+func (c *S2TOPHeader) Buffer() ui.Buffer {
 	buf := ui.NewBuffer()
 	c.Time.Text = timeStr()
 	buf.Merge(c.bg.Buffer())
@@ -33,11 +33,11 @@ func (c *CTopHeader) Buffer() ui.Buffer {
 	return buf
 }
 
-func (c *CTopHeader) Align() {
+func (c *S2TOPHeader) Align() {
 	c.bg.SetWidth(ui.TermWidth() - 1)
 }
 
-func (c *CTopHeader) Height() int {
+func (c *S2TOPHeader) Height() int {
 	return c.bg.Height
 }
 
@@ -58,11 +58,11 @@ func headerBg() *ui.Par {
 	return bg
 }
 
-func (c *CTopHeader) SetCount(val int) {
+func (c *S2TOPHeader) SetCount(val int) {
 	c.Count.Text = fmt.Sprintf("%d containers", val)
 }
 
-func (c *CTopHeader) SetFilter(val string) {
+func (c *S2TOPHeader) SetFilter(val string) {
 	if val == "" {
 		c.Filter.Text = ""
 	} else {
@@ -72,7 +72,7 @@ func (c *CTopHeader) SetFilter(val string) {
 
 func timeStr() string {
 	ts := time.Now().Local().Format("15:04:05 MST")
-	return fmt.Sprintf("ctop - %s", ts)
+	return fmt.Sprintf("s2top - %s", ts)
 }
 
 func headerPar(x int, s string) *ui.Par {

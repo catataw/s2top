@@ -1,4 +1,4 @@
-<p align="center"><img width="200px" src="/_docs/img/logo.png" alt="ctop"/></p>
+<p align="center"><img width="200px" src="/_docs/img/logo.png" alt="s2top"/></p>
 
 #
 
@@ -6,12 +6,12 @@
 
 Top-like interface for container metrics
 
-`ctop` provides a concise and condensed overview of real-time metrics for multiple containers:
-<p align="center"><img src="_docs/img/grid.gif" alt="ctop"/></p>
+`s2top` provides a concise and condensed overview of real-time metrics for multiple containers:
+<p align="center"><img src="_docs/img/grid.gif" alt="s2top"/></p>
 
 as well as an [single container view][single_view] for inspecting a specific container.
 
-`ctop` comes with built-in support for Docker and runC; connectors for other container and cluster systems are planned for future releases.
+`s2top` comes with built-in support for Docker and runC; connectors for other container and cluster systems are planned for future releases.
 
 ## Install
 
@@ -20,31 +20,31 @@ Fetch the [latest release](https://github.com/catataw/s2top/releases) for your p
 #### Linux
 
 ```bash
-sudo wget https://github.com/catataw/s2top/releases/download/v0.7.3/ctop-0.7.3-linux-amd64 -O /usr/local/bin/ctop
-sudo chmod +x /usr/local/bin/ctop
+sudo wget https://github.com/catataw/s2top/releases/download/v0.7.3/s2top-0.7.3-linux-amd64 -O /usr/local/bin/s2top
+sudo chmod +x /usr/local/bin/s2top
 ```
 
 #### OS X
 
 ```bash
-brew install ctop
+brew install s2top
 ```
 or
 ```bash
-sudo curl -Lo /usr/local/bin/ctop https://github.com/catataw/s2top/releases/download/v0.7.3/ctop-0.7.3-darwin-amd64
-sudo chmod +x /usr/local/bin/ctop
+sudo curl -Lo /usr/local/bin/s2top https://github.com/catataw/s2top/releases/download/v0.7.3/s2top-0.7.3-darwin-amd64
+sudo chmod +x /usr/local/bin/s2top
 ```
 
 #### Docker
 
 ```bash
 docker run --rm -ti \
-  --name=ctop \
+  --name=s2top \
   --volume /var/run/docker.sock:/var/run/docker.sock:ro \
-  quay.io/vektorlab/ctop:latest
+  quay.io/vektorlab/s2top:latest
 ```
 
-`ctop` is also available for Arch in the [AUR](https://aur.archlinux.org/packages/ctop-bin/)
+`s2top` is also available for Arch in the [AUR](https://aur.archlinux.org/packages/s2top-bin/)
 
 ## Building
 
@@ -52,11 +52,11 @@ Build steps can be found [here][build].
 
 ## Usage
 
-`ctop` requires no arguments and uses Docker host variables by default. See [connectors][connectors] for further configuration options.
+`s2top` requires no arguments and uses Docker host variables by default. See [connectors][connectors] for further configuration options.
 
 ### Config file
 
-While running, use `S` to save the current filters, sort field, and other options to a default config path. These settings will be loaded and applied the next time `ctop` is started.
+While running, use `S` to save the current filters, sort field, and other options to a default config path. These settings will be loaded and applied the next time `s2top` is started.
 
 ### Options
 
@@ -79,7 +79,7 @@ Key | Action
 `<enter>` | Open container menu
 `a` | Toggle display of all (running and non-running) containers
 `f` | Filter displayed containers (`esc` to clear when open)
-`H` | Toggle ctop header
+`H` | Toggle s2top header
 `h` | Open help dialog
 `s` | Select container sort field
 `r` | Reverse container sort order
@@ -87,10 +87,10 @@ Key | Action
 `l` | View container logs (`t` to toggle timestamp when open)
 `e` | Exec Shell
 `S` | Save current configuration to file
-`q` | Quit ctop
+`q` | Quit s2top
 
 [build]: _docs/build.md
 [connectors]: _docs/connectors.md
 [single_view]: _docs/single.md
-[release]: https://img.shields.io/github/release/bcicen/ctop.svg "ctop"
-[homebrew]: https://img.shields.io/homebrew/v/ctop.svg "ctop"
+[release]: https://img.shields.io/github/release/bcicen/s2top.svg "s2top"
+[homebrew]: https://img.shields.io/homebrew/v/s2top.svg "s2top"

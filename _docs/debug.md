@@ -1,18 +1,18 @@
 # Debug Mode
 
-`ctop` comes with a built-in logging facility and local socket server to simplify debugging at run time.
+`s2top` comes with a built-in logging facility and local socket server to simplify debugging at run time.
 
 ## Quick Start
 
-If running `ctop` via Docker, debug logging can be most easily enabled as below:
+If running `s2top` via Docker, debug logging can be most easily enabled as below:
 ```bash
 docker run -ti --rm \
-           --name=ctop \
-           -e CTOP_DEBUG=1 \
-           -e CTOP_DEBUG_TCP=1 \
+           --name=s2top \
+           -e S2TOP_DEBUG=1 \
+           -e S2TOP_DEBUG_TCP=1 \
            -p 9000:9000 \
            -v /var/run/docker.sock:/var/run/docker.sock \
-           quay.io/vektorlab/ctop:latest
+           quay.io/vektorlab/s2top:latest
 ```
 
 Log messages can be followed by connecting to the default listen address:
@@ -34,23 +34,23 @@ example output:
 
 ## Unix Socket
 
-Debug mode is enabled via the `CTOP_DEBUG` environment variable:
+Debug mode is enabled via the `S2TOP_DEBUG` environment variable:
 
 ```bash
-CTOP_DEBUG=1 ./ctop
+S2TOP_DEBUG=1 ./s2top
 ```
 
-While `ctop` is running, you can connect to the logging socket via socat or similar tools:
+While `s2top` is running, you can connect to the logging socket via socat or similar tools:
 ```bash
-socat unix-connect:./ctop.sock stdio
+socat unix-connect:./s2top.sock stdio
 ```
 
 ## TCP Logging Socket
 
-In lieu of using a local unix socket, TCP logging can be enabled via the `CTOP_DEBUG_TCP` environment variable:
+In lieu of using a local unix socket, TCP logging can be enabled via the `S2TOP_DEBUG_TCP` environment variable:
 
 ```bash
-CTOP_DEBUG=1 CTOP_DEBUG_TCP=1 ./ctop
+S2TOP_DEBUG=1 S2TOP_DEBUG_TCP=1 ./s2top
 ```
 
 A TCP listener for streaming log messages will be started on the default listen address(`0.0.0.0:9000`)

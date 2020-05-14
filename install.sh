@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
-# a simple install script for ctop
+# a simple install script for s2top
 
 KERNEL=$(uname -s)
 
-function output() { echo -e "\033[32mctop-install\033[0m $@"; }
+function output() { echo -e "\033[32ms2top-install\033[0m $@"; }
 
 function command_exists() {
   command -v "$@" > /dev/null 2>&1
@@ -52,33 +52,33 @@ if [ "$CURRENT_USER" != 'root' ]; then
   fi
 fi
 
-TMP=$(mktemp -d "${TMPDIR:-/tmp}/ctop.XXXXX")
+TMP=$(mktemp -d "${TMPDIR:-/tmp}/s2top.XXXXX")
 cd ${TMP}
 
 output "fetching latest release info"
-resp=$(curl -s https://api.github.com/repos/bcicen/ctop/releases/latest)
+resp=$(curl -s https://api.github.com/repos/bcicen/s2top/releases/latest)
 
 output "fetching release checksums"
 checksum_url=$(extract_url sha256sums.txt "$resp")
 wget -q $checksum_url -O sha256sums.txt
 
 # skip if latest already installed
-cur_ctop=$(which ctop 2> /dev/null)
-if [[ -n "$cur_ctop" ]]; then
-  cur_sum=$(sha256sum $cur_ctop | sed 's/ .*//')
+cur_s2top=$(which s2top 2> /dev/null)
+if [[ -n "$cur_s2top" ]]; then
+  cur_sum=$(sha256sum $cur_s2top | sed 's/ .*//')
   (grep -q $cur_sum sha256sums.txt) && {
     output "already up-to-date"
     exit 0
   }
 fi
 
-output "fetching latest ctop"
+output "fetching latest s2top"
 url=$(extract_url $MATCH_BUILD "$resp")
 wget -q --show-progress $url
 (sha256sum -c --quiet --ignore-missing sha256sums.txt) || exit 1
 
 output "installing to /usr/local/bin"
-chmod +x ctop-*
-$sh_c "mv ctop-* /usr/local/bin/ctop"
+chmod +x s2top-*
+$sh_c "mv s2top-* /usr/local/bin/s2top"
 
 output "done!"

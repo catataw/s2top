@@ -1,8 +1,8 @@
 # Status Indicator
 
-The `ctop` grid view provides a compact status indicator to convey container state
+The `s2top` grid view provides a compact status indicator to convey container state
 
-<img width="200px" src="img/status.png" alt="ctop"/>
+<img width="200px" src="img/status.png" alt="s2top"/>
 
 ### Status
 

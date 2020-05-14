@@ -13,7 +13,7 @@ const (
 )
 
 var (
-	Log    *CTopLogger
+	Log    *S2TOPLogger
 	exited bool
 	level  = logging.INFO // default level
 	format = logging.MustStringFormatter(
@@ -26,13 +26,13 @@ type statusMsg struct {
 	IsError bool
 }
 
-type CTopLogger struct {
+type S2TOPLogger struct {
 	*logging.Logger
 	backend *logging.MemoryBackend
 	sLog    []statusMsg
 }
 
-func (c *CTopLogger) FlushStatus() chan statusMsg {
+func (c *S2TOPLogger) FlushStatus() chan statusMsg {
 	ch := make(chan statusMsg)
 	go func() {
 		for _, sm := range c.sLog {
@@ -44,19 +44,19 @@ func (c *CTopLogger) FlushStatus() chan statusMsg {
 	return ch
 }
 
-func (c *CTopLogger) StatusQueued() bool     { return len(c.sLog) > 0 }
-func (c *CTopLogger) Status(s string)        { c.addStatus(statusMsg{s, false}) }
-func (c *CTopLogger) StatusErr(err error)    { c.addStatus(statusMsg{err.Error(), true}) }
-func (c *CTopLogger) addStatus(sm statusMsg) { c.sLog = append(c.sLog, sm) }
+func (c *S2TOPLogger) StatusQueued() bool     { return len(c.sLog) > 0 }
+func (c *S2TOPLogger) Status(s string)        { c.addStatus(statusMsg{s, false}) }
+func (c *S2TOPLogger) StatusErr(err error)    { c.addStatus(statusMsg{err.Error(), true}) }
+func (c *S2TOPLogger) addStatus(sm statusMsg) { c.sLog = append(c.sLog, sm) }
 
-func (c *CTopLogger) Statusf(s string, a ...interface{}) { c.Status(fmt.Sprintf(s, a...)) }
+func (c *S2TOPLogger) Statusf(s string, a ...interface{}) { c.Status(fmt.Sprintf(s, a...)) }
 
-func Init() *CTopLogger {
+func Init() *S2TOPLogger {
 	if Log == nil {
 		logging.SetFormatter(format) // setup default formatter
 
-		Log = &CTopLogger{
-			logging.MustGetLogger("ctop"),
+		Log = &S2TOPLogger{
+			logging.MustGetLogger("s2top"),
 			logging.NewMemoryBackend(size),
 			[]statusMsg{},
 		}
@@ -75,7 +75,7 @@ func Init() *CTopLogger {
 	return Log
 }
 
-func (log *CTopLogger) tail() chan string {
+func (log *S2TOPLogger) tail() chan string {
 	stream := make(chan string)
 
 	node := log.backend.Head()
@@ -100,10 +100,10 @@ func (log *CTopLogger) tail() chan string {
 	return stream
 }
 
-func (log *CTopLogger) Exit() {
+func (log *S2TOPLogger) Exit() {
 	exited = true
 	StopServer()
 }
 
-func debugMode() bool    { return os.Getenv("CTOP_DEBUG") == "1" }
-func debugModeTCP() bool { return os.Getenv("CTOP_DEBUG_TCP") == "1" }
+func debugMode() bool    { return os.Getenv("S2TOP_DEBUG") == "1" }
+func debugModeTCP() bool { return os.Getenv("S2TOP_DEBUG_TCP") == "1" }

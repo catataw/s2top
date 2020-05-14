@@ -114,7 +114,7 @@ func (cm *Runc) GetLibc(id string) libcontainer.Container {
 	return libc
 }
 
-// update a ctop container from libcontainer
+// update a s2top container from libcontainer
 func (cm *Runc) refresh(id string) {
 	libc := cm.GetLibc(id)
 	if libc == nil {
@@ -181,7 +181,7 @@ func (cm *Runc) Loop() {
 	}
 }
 
-// MustGet gets a single ctop container in the map matching libc container, creating one anew if not existing
+// MustGet gets a single s2top container in the map matching libc container, creating one anew if not existing
 func (cm *Runc) MustGet(id string) *container.Container {
 	c, ok := cm.Get(id)
 	if !ok {

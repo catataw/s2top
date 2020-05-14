@@ -1,4 +1,4 @@
-NAME=ctop
+NAME=s2top
 VERSION=$(shell cat VERSION)
 BUILD=$(shell git rev-parse --short HEAD)
 EXT_LD_FLAGS="-Wl,--allow-multiple-definition"
@@ -9,22 +9,22 @@ clean:
 
 build:
 	go mod download
-	CGO_ENABLED=0 go build -tags release -ldflags $(LD_FLAGS) -o ctop
+	CGO_ENABLED=0 go build -tags release -ldflags $(LD_FLAGS) -o s2top
 
 build-dev:
 	go build -ldflags "-w -X main.version=$(VERSION)-dev -X main.build=$(BUILD) -extldflags=$(EXT_LD_FLAGS)"
 
 build-all:
 	mkdir -p _build
-	GOOS=darwin  GOARCH=amd64 go build -tags release -ldflags $(LD_FLAGS) -o _build/ctop-$(VERSION)-darwin-amd64
-	GOOS=linux   GOARCH=amd64 go build -tags release -ldflags $(LD_FLAGS) -o _build/ctop-$(VERSION)-linux-amd64
-	GOOS=linux   GOARCH=arm   go build -tags release -ldflags $(LD_FLAGS) -o _build/ctop-$(VERSION)-linux-arm
-	GOOS=linux   GOARCH=arm64 go build -tags release -ldflags $(LD_FLAGS) -o _build/ctop-$(VERSION)-linux-arm64
-	GOOS=windows GOARCH=amd64 go build -tags release -ldflags $(LD_FLAGS) -o _build/ctop-$(VERSION)-windows-amd64
+	GOOS=darwin  GOARCH=amd64 go build -tags release -ldflags $(LD_FLAGS) -o _build/s2top-$(VERSION)-darwin-amd64
+	GOOS=linux   GOARCH=amd64 go build -tags release -ldflags $(LD_FLAGS) -o _build/s2top-$(VERSION)-linux-amd64
+	GOOS=linux   GOARCH=arm   go build -tags release -ldflags $(LD_FLAGS) -o _build/s2top-$(VERSION)-linux-arm
+	GOOS=linux   GOARCH=arm64 go build -tags release -ldflags $(LD_FLAGS) -o _build/s2top-$(VERSION)-linux-arm64
+	GOOS=windows GOARCH=amd64 go build -tags release -ldflags $(LD_FLAGS) -o _build/s2top-$(VERSION)-windows-amd64
 	cd _build; sha256sum * > sha256sums.txt
 
 image:
-	docker build -t ctop -f Dockerfile .
+	docker build -t s2top -f Dockerfile .
 
 release:
 	mkdir release

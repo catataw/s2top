@@ -8,7 +8,7 @@ import (
 )
 
 const (
-	socketPath = "./ctop.sock"
+	socketPath = "./s2top.sock"
 	socketAddr = "0.0.0.0:9000"
 )
 

@@ -1,6 +1,6 @@
 # Connectors
 
-`ctop` comes with the below native connectors, enabled via the `--connector` option.
+`s2top` comes with the below native connectors, enabled via the `--connector` option.
 
 Default connector behavior can be changed by setting the relevant environment variables.
 
