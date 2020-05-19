@@ -4,6 +4,7 @@ github.com/BurntSushi/toml v0.3.0 h1:e1/Ivsx3Z0FVTV0NSOv/aVgbUWyQuzj7DDnFblkRvsY
 github.com/BurntSushi/toml v0.3.0/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
 github.com/Microsoft/go-winio v0.4.12 h1:xAfWHN1IrQ0NJ9TBC0KBZoqLjzDTr1ML+4MywiUOryc=
 github.com/Microsoft/go-winio v0.4.12/go.mod h1:VhR8bwka0BXejwEJY73c50VrPtXAaKcyvVC4A4RozmA=
+github.com/bcicen/ctop v0.7.3 h1:rypzV1iLp2Ez+bfLg7/lFsb+SnJ+FiuW9G3HH/5RGj8=
 github.com/bcicen/termui v0.0.0-20180326052246-4eb80249d3f5 h1:2pI3ZsoefWIi++8EqmANoC7Px/v2lRwnleVUcCuFgLg=
 github.com/bcicen/termui v0.0.0-20180326052246-4eb80249d3f5/go.mod h1:yIA9ITWZD1p4/DvCQ44xvhyVb9XEUlVnY1rzGSHwbiM=
 github.com/c9s/goprocinfo v0.0.0-20170609001544-b34328d6e0cd h1:xqaBnULC8wEnQpRDXAsDgXkU/STqoluz1REOoegSfNU=

@@ -2,7 +2,6 @@ package main
 
 import (
 	"regexp"
-
 	ui "github.com/gizak/termui"
 )
 

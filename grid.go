@@ -3,6 +3,7 @@ package main
 import (
 	"github.com/catataw/s2top/config"
 	"github.com/catataw/s2top/cwidgets/single"
+  "github.com/catataw/s2top/entity"
 	ui "github.com/gizak/termui"
 )
 
